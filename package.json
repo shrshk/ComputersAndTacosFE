@@ -40,10 +40,12 @@
     "jest": "24.8.0",
     "jest-pnp-resolver": "1.1.0",
     "jest-resolve": "24.1.0",
+    "local-cors-proxy": "^1.1.0",
     "prettier": "1.16.4",
     "serverless-finch": "^2.6.0"
   },
   "scripts": {
+    "proxy": "lcp --proxyUrl https://api.computersandtacos.com",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

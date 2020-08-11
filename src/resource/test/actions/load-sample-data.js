@@ -32,7 +32,7 @@ function* loadSampleDataWorker(): any {
 function loadSampleData(): Promise<any> {
     return axios({
         method : 'get',
-        url: `${getAppServiceUrls().dummyApi}`,
+        url: `${getAppServiceUrls().computerAndTacosServiceUrl}/time`,
     });
 }
 
@@ -45,6 +45,7 @@ const testReduceHandlers = {
     },
     [LOAD_SAMPLE_DATA_SUCCESS]: (state, action) => {
         const response = action.payload;
+        console.log(response);
         return {
             ...state,
             isLoading: false,
