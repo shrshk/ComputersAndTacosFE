@@ -1,4 +1,5 @@
 {
   "dummyApi" : "http://dummy.restapiexample.com/api/v1/employees",
-  "computerAndTacosServiceUrl": "https://api.computersandtacos.com"
+  "computerAndTacosServiceUrl": "https://api.computersandtacos.com",
+  "testUrl": "https://api.computersandtacos.com"
 }
