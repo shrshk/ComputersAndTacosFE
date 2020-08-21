@@ -15,3 +15,17 @@ export const searchResultsSelector = createSelector(
         return slice.searchResults
     }
 );
+
+export const prefixListSelector = createSelector(
+    sliceSelector,
+    (slice) =>  {
+        return slice.prefixList
+    }
+);
+
+export const allRecommendationsSelector = createSelector(
+    sliceSelector,
+    (slice) =>  {
+        return slice.allRecommendations
+    }
+);

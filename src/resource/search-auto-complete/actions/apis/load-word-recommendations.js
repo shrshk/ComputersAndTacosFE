@@ -4,7 +4,7 @@ import { getAppServiceUrls } from '../../../../utils';
 const axios = require('axios');
 
 export function loadWordRecommendations(
-    queryString: string
+    queryString: Array<string>
 ): Promise<any> {
     return axios({
         method : 'post',

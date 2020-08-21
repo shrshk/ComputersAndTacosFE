@@ -6,13 +6,16 @@ export const sliceName = 'searchAutoCompleteSlice';
 export type searchAutoCompleteSlice = {
     isLoading: boolean,
     searchKey: string,
-    searchResults: Object
+    searchResults: Object,
+    prefixList: Array<string>
 };
 
 const initialState: searchAutoCompleteSlice = {
     isLoading: false,
     searchKey: ' ',
-    searchResults : {}
+    searchResults : {},
+    prefixList: [],
+    allRecommendations: {},
 };
 
 export const searchAutoCompleteReducer = createAndCombineSliceReducer(

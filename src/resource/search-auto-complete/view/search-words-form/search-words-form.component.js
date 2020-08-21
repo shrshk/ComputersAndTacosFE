@@ -3,6 +3,7 @@ import React, { Fragment, type Element } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button'
 
 export type searchWordsFormProps = {
 };
@@ -18,7 +19,10 @@ const searchWordsFormComponent = (props: Props) => {
     const {
         classes,
         updateSearchKeyAction,
+        updatePrefixListAction,
+        loadAllRecommendationsAction,
         searchKey,
+        prefixList,
         searchResults,
     } = props;
 
@@ -30,7 +34,7 @@ const searchWordsFormComponent = (props: Props) => {
                 multiple
                 fullWidth
                 id="tags-standard"
-                onChange={(event, value) => console.log(value)} // update redux state with list of strings
+                onChange={(event, value) => updatePrefixListAction(value)} // update redux state with list of strings
                 options={recommendations}
                 getOptionLabel={(option) => option}
                 renderInput={(params) => {
@@ -45,6 +49,11 @@ const searchWordsFormComponent = (props: Props) => {
                     }
                 }
             />
+            { prefixList.length>0 &&
+                <Button variant="contained" color="primary" onClick={loadAllRecommendationsAction}>
+                    Get All Results
+                </Button>
+            }
         </Fragment>
     );
 };
