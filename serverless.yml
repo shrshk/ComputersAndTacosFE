@@ -5,12 +5,13 @@ provider:
     runtime: nodejs12.x
     profile: serverless_admin
     region: us-east-1
+    stage: ${file(variables/variables.yaml):stage}
 
 plugins:
     - serverless-s3-sync
 
 custom:
-    bucketName: computers-and-tacos-fe
+    bucketName: computers-and-tacos-fe${file(variables/variables.yaml):bucketSuffix}
     s3Sync:
         - bucketName: ${self:custom.bucketName}
           localDir: build/
